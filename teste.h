@@ -16,5 +16,6 @@ void coletarS(TLista_de_Sondas *lista, RochaS *rocha, int num, FILE* arquivo);
 void imprimeS(TLista_de_Sondas *lista);
 void redistribui(TLista_de_Sondas *lista);
 Sonda_Espacial* EncontrarSondaMaisProxima(TLista_de_Sondas *lista, float latitude, float longitude);
-void AdicionarRochaNaSondaMaisProxima(TLista_de_Sondas *lista, RochaS *milist);
+void AdicionarRochaNaSondaMaisProxima(Sonda_Espacial *sondaMaisProxima, RochaS *milist);
+void operacaoE(TLista_de_Sondas* lista, float Qsondas);
 #endif

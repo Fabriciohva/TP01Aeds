@@ -28,7 +28,7 @@ void inicializaSistema(TLista_de_Sondas* lista, FILE *arquivo) {
             imprimeS(lista);
         }
     }
-}*/
+}
 void inicioS(TLista_de_Sondas* lista, int num, int Identificador, Mponto* compartimento) {
     FLSondaVazia(lista);
     float lat = 0;
@@ -44,6 +44,34 @@ void inicioS(TLista_de_Sondas* lista, int num, int Identificador, Mponto* compar
         imprime_Sonda(&sonda);
         LSondaInsere(lista, &sonda);
     }
+}*/
+void operacaoE(TLista_de_Sondas* lista, float Qsondas) {
+    // Chama a função pesoc para obter o peso total das sondas
+    float total = pesoc(lista);
+
+    // Zera a latitude e longitude de todas as sondas
+    Apontador atual = lista->pPrimeiro;  // Começa no primeiro elemento da lista
+    for (int i = 0; i < Qsondas && atual != NULL; i++) {
+        atual->Sonda.latitude = 0;
+        atual->Sonda.longitude = 0;
+        atual = atual->pProx;  // Move para o próximo elemento da lista de sondas
+    }
+
+    // Calcula o peso médio e o peso remanescente a ser distribuído
+    int peso_medio = total / Qsondas;
+
+    float peso_remanescente = fmod(total, Qsondas);
+
+    // Distribui o peso para cada sonda
+    atual = lista->pPrimeiro;  // Volta para o início da lista de sondas
+    for (int i = 0; i < Qsondas && atual != NULL; i++) {
+        if (i < peso_remanescente) {
+            atual->Sonda.peso = peso_medio + 1;
+        } else {
+            atual->Sonda.peso = peso_medio;
+        }
+        atual = atual->pProx;  // Move para o próximo elemento da lista de sondas
+    }
 }
 float distanciaS(float x1, float y1, float x2, float y2) {
     return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
@@ -68,10 +96,10 @@ Sonda_Espacial* EncontrarSondaMaisProxima(TLista_de_Sondas *lista, float latitud
         }
         return sondaMaisProxima;
 }
-void AdicionarRochaNaSondaMaisProxima(sondaMaisProxima, RochaS *milist){
+void AdicionarRochaNaSondaMaisProxima(Sonda_Espacial *sondaMaisProxima, RochaS *milist){
 
 }
-void coletarS(TLista_de_Sondas *lista, RochaS *rocha, int num, FILE *arquivo) {// num = numero de sondas
+/*void coletarS(TLista_de_Sondas *lista, RochaS *rocha, int num, FILE *arquivo) {// num = numero de sondas
     // receber localização das rochas e comparar com localização de cada sonda usando for.
     Sonda_Espacial* sondaMaisProxima = NULL;
     char linha[20];
@@ -88,7 +116,7 @@ void coletarS(TLista_de_Sondas *lista, RochaS *rocha, int num, FILE *arquivo) {/
             menorDistancia = distanciaS1;
             sondaMaisProxima = sondaAtual;
     }
-}
+}*/
 void imprimeS(TLista_de_Sondas *lista) {
     Apontador pAux = lista->pPrimeiro->pProx;
     int index = 1;

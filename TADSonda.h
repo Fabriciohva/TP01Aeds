@@ -14,7 +14,7 @@ typedef struct {
 
 } Sonda_Espacial;
 
-void Inicializa_Sonda(Sonda_Espacial *sonda, int Identificador,Mponto* compartimento, float latitude,float longitude);
+void Inicializa_Sonda(Sonda_Espacial *sonda, int Identificador, float latitude,float longitude);
 void Liga(Sonda_Espacial *sonda);
 void Desliga(Sonda_Espacial *sonda);
 void imprime_Sonda(Sonda_Espacial *sonda);

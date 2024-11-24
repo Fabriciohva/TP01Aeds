@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void Inicializa_Sonda(Sonda_Espacial *sonda, int Identificador, Mponto* compartimento, float latitude,float longitude){
+void Inicializa_Sonda(Sonda_Espacial *sonda, int Identificador, float latitude,float longitude){
          set_IdentificadorSonda(sonda, Identificador);
          set_latitudeSonda(sonda,latitude);
          set_longitudeSonda(sonda,longitude);

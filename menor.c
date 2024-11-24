@@ -35,9 +35,10 @@ int main() {
         printf("%d\n", Qsondas);
 
         for (int i = 0; i < Qsondas; i++) {
+
             Sonda_Espacial sonda;
             fscanf(arq, "%f %f %f %f %f", &sonda.latitude, &sonda.longitude, &sonda.Capacidade, &sonda.Velocidade, &sonda.Combustivel);
-            InicializarSonda(&sonda, i + 1, sonda.latitude, sonda.longitude, sonda.Capacidade, sonda.Velocidade, sonda.Combustivel);
+            Inicializa_Sonda(&sonda, i + 1, sonda.latitude, sonda.longitude);
 
             if (LSondaInsere(&pLista, &sonda) == 1) {
                 printf("Sonda %d inserida com sucesso!\n", sonda.Identificador);
