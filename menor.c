@@ -38,10 +38,11 @@ int main() {
 
             Sonda_Espacial sonda;
             fscanf(arq, "%f %f %f %f %f", &sonda.latitude, &sonda.longitude, &sonda.Capacidade, &sonda.Velocidade, &sonda.Combustivel);
+            printf("%f %f %f %f %f", sonda.latitude, sonda.longitude, sonda.Capacidade, sonda.Velocidade, sonda.Combustivel);
             Inicializa_Sonda(&sonda, i + 1, sonda.latitude, sonda.longitude);
 
             if (LSondaInsere(&pLista, &sonda) == 1) {
-                printf("Sonda %d inserida com sucesso!\n", sonda.Identificador);
+                printf(" Sonda %d inserida com sucesso!\n", sonda.Identificador);
             } else {
                 printf("Falha ao inserir a sonda %d.\n", sonda.Identificador);
             }
@@ -133,23 +134,8 @@ int main() {
             scanf(" %c", &Operac);
 
             if (Operac == 'R') {
-                char linha[250];
                 printf("Digite os dados da nova rocha (Latitude Longitude Peso Mineral1 Mineral2 Mineral3): ");
-                fgets(linha, sizeof(linha), stdin);
-                linha[strcspn(linha, "\n")] = '\0';
-
-                char *token = strtok(linha, " ");
-                latitude = atof(token);
-                token = strtok(NULL, " ");
-                longitude = atof(token);
-                token = strtok(NULL, " ");
-                peso = atof(token);
-                token = strtok(NULL, " ");
-                strcpy(mineral1, token ? token : "");
-                token = strtok(NULL, " ");
-                strcpy(mineral2, token ? token : "");
-                token = strtok(NULL, " ");
-                strcpy(mineral3, token ? token : "");
+                scanf("%f %f %f %s %s %s", &latitude, &longitude, &peso, mineral1, mineral2, mineral3);
 
                 mineral milist;
                 strcpy(milist.categoria, "");
@@ -157,14 +143,15 @@ int main() {
                 milist.latitude = latitude;
                 milist.longitude = longitude;
 
-                Sonda_Espacial *sondamaisprox = EncontrarSondaMaisProxima(&pLista, latitude, longitude);
-                if (sondamaisprox != NULL) {
-                    Move(sondamaisprox, latitude, longitude);
-                    printf("Sonda %d movida para a posicao da rocha em (%f, %f).\n", sondamaisprox->Identificador, latitude, longitude);
+                Sonda_Espacial *sondaMaisProxima = EncontrarSondaMaisProxima(&pLista, latitude, longitude);
+                if (sondaMaisProxima != NULL) {
+                    Move(sondaMaisProxima, latitude, longitude);
+                    printf("Sonda %d movida para a posição da rocha em (%f, %f).\n", sondaMaisProxima->Identificador, latitude, longitude);
                     classificacao(&milist, mineral1, mineral2, mineral3);
-                    AdicionarRochaNaSondaMaisProxima(&pLista, &milist);
-                }
-            } else if (Operac == 'I') {
+                    // Adicionar rocha na sonda mais próxima, a função precisa ser implementad
+                }}
+
+            else if (Operac == 'I') {
                 if (LSondaEhVazia(&pLista)) {
                     printf("A lista de sondas esta vazia.\n");
                 } else {
