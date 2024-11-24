@@ -4,14 +4,14 @@
 #include <math.h>
 #include "teste.h"
 
-void inicializaSistema(TLista_de_Sondas* lista, FILE *arquivo) {
+/*void inicializaSistema(TLista_de_Sondas* lista, FILE *arquivo) {
     char linha[20];
     fgets(linha, sizeof(int), arquivo);
     int numSondas = atoi(linha);
     printf("linha lida: %d\n", numSondas);//pra verificaar se leu
     inicioS(lista, numSondas, "identificador_padrao", NULL);
 }
-/*void Operacoes(TLista_de_Sondas* lista, FILE* arquivo, Mineral* peso) {
+void Operacoes(TLista_de_Sondas* lista, FILE* arquivo, Mineral* peso) {
     int numOperacoes;
     fscanf(arquivo, "%d", &numOperacoes);
     for (int i = 0; i < numOperacoes; i++) {
@@ -71,8 +71,7 @@ void operacaoE(TLista_de_Sondas* lista, float Qsondas) {
             atual->Sonda.peso = peso_medio;
         }
         atual = atual->pProx;  // Move para o próximo elemento da lista de sondas
-    }
-}
+    }}
 float distanciaS(float x1, float y1, float x2, float y2) {
     return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
 }

@@ -93,7 +93,7 @@ int main() {
                     LSondaImprime(&pLista);
                 }
             } else if (Operac == 'E') {
-                OperacaoE(&pLista);
+                operacaoE(&pLista, Qsondas);
             } else {
                 printf("Comando desconhecido: %c\n", Operac);
             }
@@ -112,7 +112,7 @@ int main() {
             Sonda_Espacial sonda;
             printf("Digite os dados da sonda %d (Latitude Longitude Capacidade Velocidade Combustivel): ", i + 1);
             scanf("%f %f %f %f %f", &sonda.latitude, &sonda.longitude, &sonda.Capacidade, &sonda.Velocidade, &sonda.Combustivel);
-            InicializarSonda(&sonda, i + 1, sonda.latitude, sonda.longitude, sonda.Capacidade, sonda.Velocidade, sonda.Combustivel);
+            Inicializa_Sonda(&sonda, i + 1, sonda.latitude, sonda.longitude);
 
             if (LSondaInsere(&pLista, &sonda)) {
                 printf("Sonda %d inserida com sucesso!\n", sonda.Identificador);
@@ -171,7 +171,7 @@ int main() {
                     LSondaImprime(&pLista);
                 }
             } else if (Operac == 'E') {
-                OperacaoE(&pLista);
+                operacaoE(&pLista, Qsondas);
             } else {
                 printf("Comando desconhecido: %c\n", Operac);
             }
