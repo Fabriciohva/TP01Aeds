@@ -1,3 +1,5 @@
+#ifndef TESTE_H
+#define TESTE_H
 #include "ListaSondas.h"
 
 typedef struct {
@@ -15,3 +17,4 @@ void imprimeS(TLista_de_Sondas *lista);
 void redistribui(TLista_de_Sondas *lista);
 Sonda_Espacial* EncontrarSondaMaisProxima(TLista_de_Sondas *lista, float latitude, float longitude);
 void AdicionarRochaNaSondaMaisProxima(TLista_de_Sondas *lista, RochaS *milist);
+#endif
