@@ -52,6 +52,9 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="menor.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="rochamineral.c">
 			<Option compilerVar="CC" />
 		</Unit>

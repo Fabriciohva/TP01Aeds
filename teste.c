@@ -48,6 +48,22 @@ void inicioS(TLista_de_Sondas* lista, int num, int Identificador, Mponto* compar
 float distanciaS(float x1, float y1, float x2, float y2) {
     return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
 }
+Sonda_Espacial* EncontrarSondaMaisProxima(TLista_de_Sondas *lista, float latitude, float longitude){
+    float menorDistancia = __FLT_MAX__;
+     for(int i=0;i<num; i++){
+        Sonda_Espacial* sondaAtual = &lista->sondas[i];
+        float x1 = get_latitudeSonda;
+        float y1 = get_longitudeSonda;
+        float distanciaS1 = distanciaS(x1, y1, LatP, LongP);
+        if (distanciaS1 < menorDistancia) {
+            menorDistancia = distanciaS1;
+            sondaMaisProxima = sondaAtual;
+        }
+    }return sondaMaisProxima;
+}
+void AdicionarRochaNaSondaMaisProxima(TLista_de_Sondas *lista, RochaS *milist){
+
+}
 void coletarS(TLista_de_Sondas *lista, RochaS *rocha, int num, FILE *arquivo) {// num = numero de sondas
     // receber localização das rochas e comparar com localização de cada sonda usando for.
     Sonda_Espacial* sondaMaisProxima = NULL;
