@@ -44,45 +44,38 @@ void set_data(mineral* milist, char *data){
 void listminerais(mineral* milist,Mineral* listminerais){
     milist->listminerais = listminerais;
 }
-void classificacao(mineral* milist,char *categoria,Mineral* listminerais){
-        if (strcmp(milist->listminerais->Nome, "Ferrolita")== 0){
-            if (strcmp(milist->listminerais->Nome, "Aquavitae")== 0){
-                if (strcmp(milist->listminerais->Nome, "Calaris")== 0){
-                    strcpy(milist->categoria, "Aquacalis");
-                }
-                else{
-                    strcpy(milist->categoria, "Aquaferro");
-                }
-            }
-            else if (strcmp(milist->listminerais->Nome, "Solarium")== 0){
-                    strcpy(milist->categoria, "Solarisfer");
-            }
-            else if (strcmp(milist->listminerais->Nome, "Terranita")== 0){
-                    strcpy(milist->categoria, "Terralis");
-            }
-            else{
-                strcpy(milist->categoria, "Ferrom");
-            }
-        }
-        else if (strcmp(milist->listminerais->Nome, "Solarium")== 0){
-            if (strcmp(milist->listminerais->Nome, "Terranita")== 0){
-                strcpy(milist->categoria, "Terrasol");
-            }
-            else{
-                strcpy(milist->categoria, "Solaris");
-            }
-        }
-        else if (strcmp(milist->listminerais->Nome, "Terranita")== 0){
-            if (strcmp(milist->listminerais->Nome, "Aquavitae")== 0){
-                strcpy(milist->categoria, "Aquaterra");
-            }
-            else if(strcmp(milist->listminerais->Nome, "Calaris")== 0){
-                strcpy(milist->categoria, "Terrolis");
-            }
-        }
-        else if (strcmp(milist->listminerais->Nome, "Calaris")== 0){
-                if (strcmp(milist->listminerais->Nome, "Aquavitae")== 0){
-                    strcpy(milist->categoria, "Calquer");
-                }
-        }
+void classificacao(mineral* milist, char *mineral01, char *mineral02, char *mineral03) {
+    char* minerais[] = {mineral01, mineral02, mineral03};
+
+    int ferrolita = 0, aquavitae = 0, calaris = 0, solarium = 0, terranita = 0;
+
+    for (int i = 0; i < 3; i++) {
+        if (strcmp(minerais[i], "Ferrolita") == 0) ferrolita = 1;
+        if (strcmp(minerais[i], "Aquavitae") == 0) aquavitae = 1;
+        if (strcmp(minerais[i], "Calaris") == 0) calaris = 1;
+        if (strcmp(minerais[i], "Solarium") == 0) solarium = 1;
+        if (strcmp(minerais[i], "Terranita") == 0) terranita = 1;
     }
+
+    if (ferrolita && aquavitae && calaris) {
+        strcpy(milist->categoria, "Aquacalis");
+    } else if (ferrolita && aquavitae) {
+        strcpy(milist->categoria, "Aquaferro");
+    } else if (ferrolita && solarium) {
+        strcpy(milist->categoria, "Solarisfer");
+    } else if (ferrolita && terranita) {
+        strcpy(milist->categoria, "Terralis");
+    } else if (ferrolita) {
+        strcpy(milist->categoria, "Ferrom");
+    } else if (solarium && terranita) {
+        strcpy(milist->categoria, "Terrasol");
+    } else if (solarium) {
+        strcpy(milist->categoria, "Solaris");
+    } else if (terranita && aquavitae) {
+        strcpy(milist->categoria, "Aquaterra");
+    } else if (terranita && calaris) {
+        strcpy(milist->categoria, "Terrolis");
+    } else if (calaris && aquavitae) {
+        strcpy(milist->categoria, "Calquer");
+    }
+}

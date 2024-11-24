@@ -51,6 +51,6 @@ void imprime_Sonda(Sonda_Espacial *sonda){
     printf("[Sonda: %s\n", sonda->Identificador);
     printf(" Localizacao(Latidude,Longitude): (%f,%f)\n", sonda->latitude, sonda->longitude);
     printf(" Esta ligada?: %s\n", sonda->EstaLigada);
-    imprimec(&sonda->compartimento);
+    imprimec(&(sonda->compartimento));
     printf(" ]\n");
 }

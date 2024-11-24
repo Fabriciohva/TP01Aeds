@@ -1,5 +1,5 @@
-#ifndef TADSonda_H
-#define TADSonda_H
+#ifndef TADSONDA_H
+#define TADSONDA_H
 #include "tadcompartimentos.h"
 
 typedef struct {
