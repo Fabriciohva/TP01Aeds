@@ -10,6 +10,7 @@ typedef struct {
     float Capacidade;
     float Velocidade;
     float Combustivel;
+    float peso;
     char EstaLigada[6];
 
 } Sonda_Espacial;
