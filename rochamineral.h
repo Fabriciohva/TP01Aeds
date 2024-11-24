@@ -1,3 +1,5 @@
+#ifndef ROCHAMINERAL_H
+#define ROCHAMINERAL_H
 #include "TADlistaminerais.h"
 
 typedef struct{
@@ -26,3 +28,4 @@ void set_data(mineral* milist, char *data);
 
 void listminerais(mineral* milist,Mineral* listminerais);
 void classificacao(mineral* milist,char *mineral01,char *mineral02,char *mineral03);
+#endif
