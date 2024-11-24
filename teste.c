@@ -50,16 +50,23 @@ float distanciaS(float x1, float y1, float x2, float y2) {
 }
 Sonda_Espacial* EncontrarSondaMaisProxima(TLista_de_Sondas *lista, float latitude, float longitude){
     float menorDistancia = __FLT_MAX__;
-     for(int i=0;i<num; i++){
-        Sonda_Espacial* sondaAtual = &lista->sondas[i];
-        float x1 = get_latitudeSonda;
-        float y1 = get_longitudeSonda;
-        float distanciaS1 = distanciaS(x1, y1, LatP, LongP);
+    Sonda_Espacial* sondaMaisProxima = NULL;
+    Apontador pAux;
+    pAux = lista->pPrimeiro->pProx;
+    int i=0;
+
+    while (pAux != NULL)
+        {Sonda_Espacial* sondaAtual = pAux;
+        float x1 = get_latitudeSonda(&sondaAtual);
+        float y1 = get_longitudeSonda(&sondaAtual);
+        float distanciaS1 = distanciaS(x1, y1, latitude, longitude);
         if (distanciaS1 < menorDistancia) {
             menorDistancia = distanciaS1;
             sondaMaisProxima = sondaAtual;
+            }
+            pAux = pAux->pProx;
         }
-    }return sondaMaisProxima;
+        return sondaMaisProxima;
 }
 void AdicionarRochaNaSondaMaisProxima(sondaMaisProxima, RochaS *milist){
 

@@ -156,7 +156,7 @@ int main() {
                 milist.latitude = latitude;
                 milist.longitude = longitude;
 
-                DadosSonda *sondamaisprox = EncontrarSondaMaisProxima(&pLista, latitude, longitude);
+                Sonda_Espacial *sondamaisprox = EncontrarSondaMaisProxima(&pLista, latitude, longitude);
                 if (sondamaisprox != NULL) {
                     Move(sondamaisprox, latitude, longitude);
                     printf("Sonda %d movida para a posicao da rocha em (%f, %f).\n", sondamaisprox->Identificador, latitude, longitude);

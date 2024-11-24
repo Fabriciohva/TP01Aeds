@@ -5,13 +5,13 @@
 	<math.h>
 	"teste.h"
 
-1732474815 c:\users\hpkil\documents\aids\tp01\tp01aeds\tpaeds01\teste.h
+1732476353 c:\users\hpkil\documents\aids\tp01\tp01aeds\tpaeds01\teste.h
 	"ListaSondas.h"
 
-1732470563 c:\users\hpkil\documents\aids\tp01\tp01aeds\tpaeds01\listasondas.h
+1732476247 c:\users\hpkil\documents\aids\tp01\tp01aeds\tpaeds01\listasondas.h
 	"TADSonda.h"
 
-1732475413 c:\users\hpkil\documents\aids\tp01\tp01aeds\tpaeds01\tadsonda.h
+1732476353 c:\users\hpkil\documents\aids\tp01\tp01aeds\tpaeds01\tadsonda.h
 	"tadcompartimentos.h"
 
 1732416091 c:\users\hpkil\documents\aids\tp01\tp01aeds\tpaeds01\tadcompartimentos.h
@@ -52,7 +52,7 @@
 	"Tadmineral.h"
 	<string.h>
 
-1732410910 source:c:\users\hpkil\documents\aids\tp01\tp01aeds\tpaeds01\tadsonda.c
+1732475413 source:c:\users\hpkil\documents\aids\tp01\tp01aeds\tpaeds01\tadsonda.c
 	"./TADSonda.h"
 	<stdio.h>
 	<stdlib.h>
@@ -63,5 +63,13 @@
 	<stdlib.h>
 	<string.h>
 	<math.h>
+	"teste.h"
+
+1732476771 source:c:\users\hpkil\documents\aids\tp01\tp01aeds\tpaeds01\menor.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<float.h>
 	"teste.h"
 
