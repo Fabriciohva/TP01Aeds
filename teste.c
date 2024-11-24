@@ -61,7 +61,7 @@ Sonda_Espacial* EncontrarSondaMaisProxima(TLista_de_Sondas *lista, float latitud
         }
     }return sondaMaisProxima;
 }
-void AdicionarRochaNaSondaMaisProxima(TLista_de_Sondas *lista, RochaS *milist){
+void AdicionarRochaNaSondaMaisProxima(sondaMaisProxima, RochaS *milist){
 
 }
 void coletarS(TLista_de_Sondas *lista, RochaS *rocha, int num, FILE *arquivo) {// num = numero de sondas

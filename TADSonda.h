@@ -24,5 +24,5 @@ float get_longitudeSonda(Sonda_Espacial *sonda);
 void set_IdentificadorSonda(Sonda_Espacial *sonda, int identificador);
 void set_latitudeSonda(Sonda_Espacial *sonda, float latitude);
 void set_longitudeSonda(Sonda_Espacial *sonda, float longitude);
-void Move(Sonda_Espacial *sonda,FILE *arquivo);
+void Move(Sonda_Espacial *sonda, float latitude, float longitude
 #endif

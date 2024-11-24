@@ -35,15 +35,7 @@ void set_latitudeSonda(Sonda_Espacial *sonda, float latitude){
 void set_longitudeSonda(Sonda_Espacial *sonda, float longitude){
     sonda->longitude = longitude;
 }
-void Move(Sonda_Espacial *sonda,FILE *arquivo){
-    float latitude;
-    float longitude;
-    char linha[50];
-    float LatP, LongP;
-
-    fgets(linha, sizeof(linha), arquivo);
-    sscanf(linha, "%f %f", &latitude, &longitude);
-
+void Move(Sonda_Espacial *sonda, float latitude, float longitude){
     set_latitudeSonda(sonda,latitude);
     set_longitudeSonda(sonda,longitude);
 }
