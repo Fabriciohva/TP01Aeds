@@ -4,7 +4,6 @@
 #include <math.h>
 #include "teste.h"
 
-
 void OperacaoI(TLista_de_Sondas* lista) {
     Apontador pAux = lista->pPrimeiro->pProx;
     while (pAux != NULL) {
@@ -66,8 +65,8 @@ Sonda_Espacial* EncontrarSondaMaisProxima(TLista_de_Sondas *lista, float latitud
         }
         return sondaMaisProxima;
 }
-void AdicionarRochaNaSondaMaisProxima(Sonda_Espacial *sondaMaisProxima, RochaS *milist){
-
+void AdicionarRochaNaSondaMaisProxima(Sonda_Espacial *sondaMaisProxima, RochaS *milist) {
+    sondaMaisProxima->compartimento->compartimento->peso += milist->mine.peso;
 }
 /*void coletarS(TLista_de_Sondas *lista, RochaS *rocha, int num, FILE *arquivo) {// num = numero de sondas
     // receber localização das rochas e comparar com localização de cada sonda usando for.

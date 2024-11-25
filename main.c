@@ -151,7 +151,7 @@ int main() {
                     Move(sondaMaisProxima, latitude, longitude);
                     printf("Sonda %d movida para a posição da rocha em (%f, %f).\n", sondaMaisProxima->Identificador, latitude, longitude);
                     classificacao(&milist, mineral1, mineral2, mineral3);
-                    // Adicionar rocha na sonda mais próxima, a função precisa ser implementad
+
                 }
             }else if (Operac == 'I') {
                 if (LSondaEhVazia(&pLista)) {
