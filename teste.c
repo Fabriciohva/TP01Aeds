@@ -45,6 +45,17 @@ void inicioS(TLista_de_Sondas* lista, int num, int Identificador, Mponto* compar
         LSondaInsere(lista, &sonda);
     }
 }*/
+void OperacaoI(TLista_de_Sondas* lista) {
+    Apontador pAux = lista->pPrimeiro->pProx;
+    while (pAux != NULL) {
+        Apontador rochaAtual = pAux->Sonda.compartimento->prox;
+        while (rochaAtual != NULL) {
+            printf("%s %f\n", rochaAtual->Sonda->compartimento->compartimento->categoria, rochaAtual->Sonda->compartimento->compartimento->peso);
+            rochaAtual = rochaAtual->prox;
+        }
+        pAux = pAux->pProx;
+    }
+}
 void operacaoE(TLista_de_Sondas* lista, float Qsondas) {
     // Chama a função pesoc para obter o peso total das sondas
     float total = pesoc(lista);

@@ -91,7 +91,10 @@ int main() {
                 if (LSondaEhVazia(&pLista)) {
                     printf("A lista de sondas esta vazia.\n");
                 } else {
-                    LSondaImprime(&pLista);
+                    for(int i = 1; i <= Qsondas; i++) {
+                        printf("%d\n", i);
+                        OperacaoI(&pLista);
+                    }
                 }
             } else if (Operac == 'E') {
                 operacaoE(&pLista, Qsondas);
@@ -149,13 +152,15 @@ int main() {
                     printf("Sonda %d movida para a posição da rocha em (%f, %f).\n", sondaMaisProxima->Identificador, latitude, longitude);
                     classificacao(&milist, mineral1, mineral2, mineral3);
                     // Adicionar rocha na sonda mais próxima, a função precisa ser implementad
-                }}
-
-            else if (Operac == 'I') {
+                }
+            }else if (Operac == 'I') {
                 if (LSondaEhVazia(&pLista)) {
                     printf("A lista de sondas esta vazia.\n");
                 } else {
-                    LSondaImprime(&pLista);
+                    for(int i = 1; i <= Qsondas; i++) {
+                        printf("%d\n", i);
+                        OperacaoI(&pLista);
+                    }
                 }
             } else if (Operac == 'E') {
                 operacaoE(&pLista, Qsondas);
@@ -164,6 +169,5 @@ int main() {
             }
         }
     }
-
     return 0;
 }

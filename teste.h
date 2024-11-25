@@ -18,4 +18,5 @@ void redistribui(TLista_de_Sondas *lista);
 Sonda_Espacial* EncontrarSondaMaisProxima(TLista_de_Sondas *lista, float latitude, float longitude);
 void AdicionarRochaNaSondaMaisProxima(Sonda_Espacial *sondaMaisProxima, RochaS *milist);
 void operacaoE(TLista_de_Sondas* lista, float Qsondas);
+void OperacaoI(TLista_de_Sondas* lista);
 #endif
