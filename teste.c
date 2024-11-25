@@ -4,47 +4,7 @@
 #include <math.h>
 #include "teste.h"
 
-/*void inicializaSistema(TLista_de_Sondas* lista, FILE *arquivo) {
-    char linha[20];
-    fgets(linha, sizeof(int), arquivo);
-    int numSondas = atoi(linha);
-    printf("linha lida: %d\n", numSondas);//pra verificaar se leu
-    inicioS(lista, numSondas, "identificador_padrao", NULL);
-}
-void Operacoes(TLista_de_Sondas* lista, FILE* arquivo, Mineral* peso) {
-    int numOperacoes;
-    fscanf(arquivo, "%d", &numOperacoes);
-    for (int i = 0; i < numOperacoes; i++) {
-        char operacao;
-        fscanf(arquivo, " %c", &operacao);
-        if (operacao == 'R') {
-            RochaS rocha;
-            fscanf(arquivo, "%f %f %f %s %s", &rocha.x, &rocha.y, &rocha.mine.Dureza, rocha.mine.Nome, rocha.mine.Cor);
-            coletarS(lista, &rocha);
-        } else if (operacao == 'I') {
-            imprimeS(lista);
-        } else if (operacao == 'E') {
-            redistribui(lista);
-            imprimeS(lista);
-        }
-    }
-}
-void inicioS(TLista_de_Sondas* lista, int num, int Identificador, Mponto* compartimento) {
-    FLSondaVazia(lista);
-    float lat = 0;
-    float longi = 0;
-    for (int i = 0; i < num; i++) {
-        Sonda_Espacial sonda;
-        //Mponto compartimento;
-        vaziac(&compartimento);
-        char id[30];
-        sprintf(id, "%s_%d", Identificador, i + 1);
-        Inicializa_Sonda(&sonda, id, &compartimento, lat, longi);
-        Liga(&sonda);
-        imprime_Sonda(&sonda);
-        LSondaInsere(lista, &sonda);
-    }
-}*/
+
 void OperacaoI(TLista_de_Sondas* lista) {
     Apontador pAux = lista->pPrimeiro->pProx;
     while (pAux != NULL) {
